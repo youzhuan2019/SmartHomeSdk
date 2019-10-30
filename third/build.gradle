@@ -22,7 +22,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':aidl')
-    api project(':common')
-    api project(':devices')
+    compileOnly project(':aidl')
+    compileOnly project(':common')
+    compileOnly project(':devices')
 }
