@@ -24,7 +24,7 @@ android {
 dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compileOnly project(':aidl')
-    compileOnly project(':common')
-    compileOnly project(':devices')
+    implementation project(':aidl')
+    implementation project(':common')
+    implementation project(':devices')
 }
