@@ -1,1 +1,1 @@
-include ':demo', ':aidl'
+include ':demo', ':aidl', ':third', ':common', ':devices'
