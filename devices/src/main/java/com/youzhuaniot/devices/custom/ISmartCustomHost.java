@@ -1,4 +1,4 @@
-package com.youzhuan.devices.custom;
+package com.youzhuaniot.devices.custom;
 
 
 import com.youzhuaniot.callback.IResultCallBack;

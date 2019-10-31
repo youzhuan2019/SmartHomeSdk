@@ -1,4 +1,4 @@
-package com.youzhuan.devices.custom;
+package com.youzhuaniot.devices.custom;
 
 /**
  *  需要登录实现的接口,平台支持登录则实现

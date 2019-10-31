@@ -1,11 +1,11 @@
-package com.youzhuan.devices.abs;
+package com.youzhuaniot.devices.abs;
 
 import android.text.TextUtils;
 
 import com.youzhuaniot.callback.IResultCallBack;
-import com.youzhuaniot.common.constatnt.YzAction;
-import com.youzhuaniot.common.constatnt.YzAttribute;
-import com.youzhuaniot.common.constatnt.YzOrder;
+import com.youzhuaniot.constatnt.YzAction;
+import com.youzhuaniot.constatnt.YzAttribute;
+import com.youzhuaniot.constatnt.YzOrder;
 import com.youzhuaniot.common.utils.JsonUtil;
 import com.youzhuaniot.entity.YzCtrlCmd;
 import com.youzhuaniot.entity.YzSmartDevice;

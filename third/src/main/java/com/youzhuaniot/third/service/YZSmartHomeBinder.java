@@ -2,14 +2,14 @@ package com.youzhuaniot.third.service;
 
 import android.os.RemoteException;
 
-import com.youzhuan.devices.custom.ISmartCustom;
-import com.youzhuan.devices.custom.ISmartCustomDevice;
-import com.youzhuan.devices.custom.ISmartCustomHost;
-import com.youzhuan.devices.custom.ISmartCustomLogin;
+import com.youzhuaniot.devices.custom.ISmartCustom;
+import com.youzhuaniot.devices.custom.ISmartCustomDevice;
+import com.youzhuaniot.devices.custom.ISmartCustomHost;
+import com.youzhuaniot.devices.custom.ISmartCustomLogin;
 import com.youzhuaniot.aidl.AidlCallBack;
 import com.youzhuaniot.aidl.YzActionAidl;
 import com.youzhuaniot.callback.IResultCallBack;
-import com.youzhuaniot.common.constatnt.YzAction;
+import com.youzhuaniot.constatnt.YzAction;
 import com.youzhuaniot.common.utils.JsonUtil;
 import com.youzhuaniot.entity.VoiceCtrlCmd;
 import com.youzhuaniot.entity.YzCtrlCmd;

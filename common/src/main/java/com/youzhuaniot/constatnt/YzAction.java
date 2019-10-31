@@ -1,4 +1,4 @@
-package com.youzhuaniot.common.constatnt;
+package com.youzhuaniot.constatnt;
 
 /**
  * 动作指令集合

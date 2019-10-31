@@ -13,9 +13,11 @@
             <option value="$PROJECT_DIR$/demo" />
             <option value="$PROJECT_DIR$/devices" />
             <option value="$PROJECT_DIR$/third" />
+            <option value="$PROJECT_DIR$/voice" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

@@ -1,4 +1,4 @@
-package com.youzhuaniot.common.constatnt;
+package com.youzhuaniot.constatnt;
 
 public interface YzOrder {
 	String UNKNOWN = "UNKNOWN";

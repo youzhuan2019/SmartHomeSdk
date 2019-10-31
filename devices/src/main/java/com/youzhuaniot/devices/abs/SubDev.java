@@ -1,4 +1,4 @@
-package com.youzhuan.devices.abs;
+package com.youzhuaniot.devices.abs;
 
 
 public abstract class SubDev extends AbsDevice {
