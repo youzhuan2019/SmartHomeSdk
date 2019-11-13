@@ -1,8 +1,12 @@
 package com.youzhuaniot.common.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONReader;
 import com.alibaba.fastjson.TypeReference;
 import com.google.gson.Gson;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public final class JsonUtil {
 	private JsonUtil(){}
@@ -20,4 +24,7 @@ public final class JsonUtil {
 	public static <T> T fromJson(String json,TypeReference typeReference){
 		return (T) JSON.parseObject(json,typeReference);
 	}
+
+
+
 }
