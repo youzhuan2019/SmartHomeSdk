@@ -19,7 +19,18 @@ public interface YzDevType {
 	String DEV_TYPE_AIR_PURIFIER = "air_purifier";
 	//调光灯
 	String DEV_TYPE_DIMMER_LIGHT = "dimmer_light";
+	//地暖
+	String DEV_TYPE_FLOOR_WARM = "floor_warm";
+	//风扇
+	String DEV_TYPE_FAN = "fan";
+	//红外空调
+	String DEV_TYPE_IR_AIR_CONDITIONER = "IR_air_conditioner";
+	//晾衣架
+	String DEV_TYPE_RACKS = "Racks";
+	//新风机
+	String DEV_TYPE_FRESH_AIR = "fresh_air";
 
+	
 	public interface Sub{
 		String SUB_COLOR_RGB_LIGHT = "rgb_light";
 		String SUB_COLOR_WARM_LIGHT = "color_warm_light";

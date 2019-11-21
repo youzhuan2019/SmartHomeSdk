@@ -1,7 +1,11 @@
 ext {
     android = [compileSdkVersion: 28,
-               minSdkVersion    : 19,
+               minSdkVersion    : 16,
                targetSdkVersion : 28,
                versionCode      : 1,
                versionName      : "1.0"]
+
+    maven = [  rep : "file://D://apache/youzhuanRep/",
+               groupId : "com.youzhuan.iot",
+               version : "1.0.0"]
 }

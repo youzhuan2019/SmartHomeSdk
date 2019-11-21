@@ -34,6 +34,23 @@ public class YzSmartDevice implements Serializable {
 	//设备是否在线
 	private boolean isOnline;
 
+	public void set(YzSmartDevice newValue){
+		this.devId = newValue.getDevId();
+		this.devName = newValue.getDevName();
+		this.devNickName = newValue.getDevNickName();
+		this.devType = newValue.getDevType();
+		this.devSubType = newValue.getDevSubType();
+		this.devVendor = newValue.getDevVendor();
+		this.yzZoom = newValue.getYzZoom();
+		this.yzRoom = newValue.getYzRoom();
+		this.description = newValue.getDescription();
+		this.pic = newValue.getPic();
+		this.extension = newValue.getExtension();
+		this.isOnline = newValue.isOnline();
+		this.devAttr = null;
+		this.devAttr = newValue.getYzDevAttr();
+	}
+
 	//设备属性
 	private Map<String,String> devAttr = new HashMap<>();
 
@@ -192,7 +209,6 @@ public class YzSmartDevice implements Serializable {
 		 getYzDevAttr().put(key,value);
 	}
 
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(devId, devName, devNickName, devType,
@@ -200,4 +216,6 @@ public class YzSmartDevice implements Serializable {
 				yzZoom, yzRoom, description, pic,
 				extension, isOnline, devAttr);
 	}
+
+
 }

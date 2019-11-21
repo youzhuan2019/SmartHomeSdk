@@ -12,4 +12,10 @@ public interface YzAttribute {
 	String ATTR_BRIGHTNESS = "attr_brightness";
 	//色彩
 	String ATTR_RGB_COLOR = "attr_rgb_color";
+	//模式选择
+	String ATTR_MODE = "attr_mode";
+	//风速
+	String ATTR_WIND_SPEED = "attr_wind_speed";
+	//风向
+	String ATTR_WIND_DIRECTION = "attr_wind_direction";
 }
