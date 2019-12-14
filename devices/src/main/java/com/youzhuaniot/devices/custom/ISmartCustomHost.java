@@ -11,9 +11,9 @@ public interface ISmartCustomHost extends ISmartCustom {
 	//获取智能家居主机信息
 	YzSmartHomeInfo getSmartHomeInfo();
 	//查询主机设备
-	void findHost(IResultCallBack callBack);
+	void findHost();
 	//取绑主机
-	void unBindForHost(IResultCallBack callBack);
+	void unBindForHost();
 	//初始化
 	void init();
 }

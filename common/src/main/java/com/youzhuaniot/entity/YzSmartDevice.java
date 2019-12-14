@@ -1,6 +1,9 @@
 package com.youzhuaniot.entity;
 
+import android.os.Build;
+
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -211,10 +214,18 @@ public class YzSmartDevice implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(devId, devName, devNickName, devType,
-				devSubType, devVendor,
-				yzZoom, yzRoom, description, pic,
-				extension, isOnline, devAttr);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			return Objects.hash(devId, devName, devNickName, devType,
+					devSubType, devVendor,
+					yzZoom, yzRoom, description, pic,
+					extension, isOnline, devAttr);
+		}else{
+			Object[] objs = {devId, devName, devNickName, devType,
+					devSubType, devVendor,
+					yzZoom, yzRoom, description, pic,
+					extension, isOnline, devAttr};
+			return Arrays.hashCode(objs);
+		}
 	}
 
 

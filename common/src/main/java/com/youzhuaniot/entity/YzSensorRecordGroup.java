@@ -6,38 +6,19 @@ import android.os.Parcelable;
 import java.util.List;
 
 
-public class YzSensorRecordGroup implements Parcelable {
+public class YzSensorRecordGroup{
 
+	private String deviceId;
 	private String sensorGroupName;
 	private List<YzSensorRecord> mSensorRecord;
 
-	protected YzSensorRecordGroup(Parcel in) {
-		sensorGroupName = in.readString();
-		mSensorRecord = in.createTypedArrayList(YzSensorRecord.CREATOR);
+	public String getDeviceId() {
+		return deviceId;
 	}
 
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(sensorGroupName);
-		dest.writeTypedList(mSensorRecord);
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
 	}
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	public static final Creator<YzSensorRecordGroup> CREATOR = new Creator<YzSensorRecordGroup>() {
-		@Override
-		public YzSensorRecordGroup createFromParcel(Parcel in) {
-			return new YzSensorRecordGroup(in);
-		}
-
-		@Override
-		public YzSensorRecordGroup[] newArray(int size) {
-			return new YzSensorRecordGroup[size];
-		}
-	};
 
 	public String getSensorGroupName() {
 		return sensorGroupName;
@@ -54,5 +35,4 @@ public class YzSensorRecordGroup implements Parcelable {
 	public void setmSensorRecord(List<YzSensorRecord> mSensorRecord) {
 		this.mSensorRecord = mSensorRecord;
 	}
-	public YzSensorRecordGroup(){}
 }

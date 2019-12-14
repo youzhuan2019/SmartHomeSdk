@@ -19,7 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'D://apache/youzhuanRep' }
+        maven {
+            url 'http://ljx1296766433.vicp.cc/nexus/content/repositories/ljxCenterl/'
+        }
+//        maven { url 'D://apache/youzhuanRep' }
     }
 }
 

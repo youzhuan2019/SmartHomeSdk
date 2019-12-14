@@ -1,9 +1,11 @@
-package com.youzhuaniot.entity;
+package com.youzhuaniot.cmd;
+
+
 
 /**
  * 语音参数命令类
  */
-public class VoiceCtrlCmd extends YzCtrlCmd{
+public class VoiceCtrlCmd extends YzCtrlCmd {
 
 	//设备类型
 	private String devType;

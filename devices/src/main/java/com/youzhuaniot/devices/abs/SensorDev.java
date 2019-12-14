@@ -29,7 +29,7 @@ public abstract class SensorDev extends AbsDevice{
 	}
 
 	@Override
-	public void deviceOrderOther() {
+	public void deviceOrderOther(String order) {
 
 	}
 }

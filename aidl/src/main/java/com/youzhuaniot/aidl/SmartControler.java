@@ -11,6 +11,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import com.youzhuaniot.callback.IResultCallBack;
+import com.youzhuaniot.constatnt.YzAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 /**
  * 智能家居控制Aidl 服务连接类
  */
+@Deprecated
 public class SmartControler implements ServiceConnection {
 
 	private static final String TAG =  SmartControler.class.getName();

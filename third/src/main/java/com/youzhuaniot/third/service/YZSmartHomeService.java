@@ -4,6 +4,8 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.youzhuaniot.callback.IResultCallBack;
+import com.youzhuaniot.constatnt.Status;
 import com.youzhuaniot.devices.custom.ISmartCustom;
 
 
@@ -16,7 +18,8 @@ public abstract class YZSmartHomeService extends Service {
 
 	@Override
 	public void onCreate() {
-		homeBinder = new YZSmartHomeBinder(createSmartCustom());
+		homeBinder = new YZSmartHomeBinder();
+		homeBinder.setCustomAction(createSmartCustom());
 		super.onCreate();
 	}
 
@@ -26,4 +29,8 @@ public abstract class YZSmartHomeService extends Service {
 	}
 
 	public abstract ISmartCustom createSmartCustom();
+
+	public  IResultCallBack getIResultCallBack(){
+		return homeBinder;
+	}
 }

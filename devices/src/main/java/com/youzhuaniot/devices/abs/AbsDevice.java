@@ -7,7 +7,7 @@ import com.youzhuaniot.constatnt.YzAction;
 import com.youzhuaniot.constatnt.YzAttribute;
 import com.youzhuaniot.constatnt.YzOrder;
 import com.youzhuaniot.common.utils.JsonUtil;
-import com.youzhuaniot.entity.YzCtrlCmd;
+import com.youzhuaniot.cmd.YzCtrlCmd;
 import com.youzhuaniot.entity.YzSmartDevice;
 
 import java.util.Map;
@@ -52,7 +52,7 @@ public abstract class AbsDevice implements Device {
 	//设备设置命令执行方法
 	public abstract void deviceOrderSet(Map<String,String> yzAttributes);
 	//设备其他命令执行方法
-	public abstract void deviceOrderOther();
+	public abstract void deviceOrderOther(String order);
 	//转换为传感器设备空实现
 	public void convertSensor(){}
 	//转换为子设备空实现
@@ -77,7 +77,9 @@ public abstract class AbsDevice implements Device {
 					deviceOrderAdjust(cmd.getAttr());
 					break;
 				default:
-					deviceOrderOther();
+					if(!TextUtils.isEmpty(cmd.getOrder())){
+						deviceOrderOther(cmd.getOrder());
+					}
 					break;
 			}
 		}

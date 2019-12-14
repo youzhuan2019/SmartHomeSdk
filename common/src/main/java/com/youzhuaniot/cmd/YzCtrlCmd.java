@@ -1,4 +1,8 @@
-package com.youzhuaniot.entity;
+package com.youzhuaniot.cmd;
+
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -14,7 +18,7 @@ public class YzCtrlCmd implements Serializable {
 	//设备Id  如果是语音控制则不需要填写
 	private String devId;
 	//设备属性参数,除开关命令外,设备有特殊属性时需添加对应参数值
-	private Map<String,String> attr = new HashMap<>();
+	private Map<String,String> attr;
 //	private List<YzAttribute> yzAttributes;
 	// 扩展参数
 	private String expand;
@@ -22,6 +26,7 @@ public class YzCtrlCmd implements Serializable {
 
 
 	public Map<String, String> getAttr() {
+		checkIsNotNull();
 		return attr;
 	}
 
@@ -43,7 +48,6 @@ public class YzCtrlCmd implements Serializable {
 	}
 
 
-
 	public String getDevId() {
 		return devId;
 	}
@@ -53,18 +57,22 @@ public class YzCtrlCmd implements Serializable {
 	}
 
 	public void addAttr(String key,String value){
-		 attr.put(key,value);
+		checkIsNotNull();
+		attr.put(key,value);
 	}
 
 	public boolean existAttr(String key){
+		checkIsNotNull();
 		return attr.containsKey(key);
 	}
 
 	public String getAttrValue(String key){
+		checkIsNotNull();
 		return attr.get(key);
 	}
 
 	public void clearAttr(){
+		checkIsNotNull();
 		attr.clear();
 	}
 
@@ -74,6 +82,7 @@ public class YzCtrlCmd implements Serializable {
 		attr.clear();
 		expand = null;
 	}
+
 	@Override
 	public String toString() {
 		return "YzCtrlCmd{" +
@@ -83,4 +92,15 @@ public class YzCtrlCmd implements Serializable {
 				", expand='" + expand + '\'' +
 				'}';
 	}
+
+	private void checkIsNotNull(){
+		if(attr == null){
+			synchronized (HashMap.class){
+				if(attr == null){
+					attr = new HashMap<>();
+				}
+			}
+		}
+	}
+
 }

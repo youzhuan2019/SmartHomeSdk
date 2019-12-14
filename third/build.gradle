@@ -24,9 +24,9 @@ android {
 dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.youzhuan.iot:aidl:1.0.0'
-    implementation 'com.youzhuan.iot:common:1.0.0'
-    implementation 'com.youzhuan.iot:devices:1.0.0'
+    implementation "com.youzhuan.iot:aidl:$maven.version"
+    implementation "com.youzhuan.iot:common:$maven.version"
+    implementation "com.youzhuan.iot:devices:$maven.version"
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.alibaba:fastjson:1.1.71.android'
 }
@@ -37,7 +37,9 @@ apply plugin: "maven"
 uploadArchives{
     repositories.mavenDeployer{
         // 本地仓库路径
-        repository(url:maven.rep)
+        repository(url:maven.rep){
+            authentication(userName: maven.username, password: maven.pwd)
+        }
         // 唯一标识
         pom.groupId = maven.groupId
         // 版本号

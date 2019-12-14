@@ -5,7 +5,11 @@ ext {
                versionCode      : 1,
                versionName      : "1.0"]
 
-    maven = [  rep : "file://D://apache/youzhuanRep/",
+    maven = [
+//               rep :"file://D://apache/youzhuanRep/",
+               rep : "http://122.51.87.210:8081/nexus/content/repositories/snapshots/",
+               username : "admin",
+               pwd:"ljx19960723",
                groupId : "com.youzhuan.iot",
-               version : "1.0.0"]
+               version : "1.0.0-SNAPSHOT"]
 }

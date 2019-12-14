@@ -2,7 +2,7 @@ package com.youzhuaniot.common.helper;
 
 
 import com.annimon.stream.Stream;
-import com.youzhuaniot.entity.VoiceCtrlCmd;
+import com.youzhuaniot.cmd.VoiceCtrlCmd;
 import com.youzhuaniot.entity.YzSmartDevice;
 
 import java.util.List;
@@ -13,12 +13,20 @@ import java.util.List;
  */
 public final class YzSmartHelper {
 
+
 	/**
 	 * 根据设备Id 查询实体
 	 * @param devices  数据集合
-	 * @param devId  设备ID
+	 * @param device  需要查询的设备
 	 * @return 查询到的数据
 	 */
+	public static YzSmartDevice findByDevId(List<YzSmartDevice> devices, YzSmartDevice device){
+		if(device.getDevId() == null){
+			throw new RuntimeException("设备命令中的设备Id值不允许为空");
+		}
+		return findByDevId(devices,device.getDevId());
+	}
+
 	public static YzSmartDevice findByDevId(List<YzSmartDevice> devices, String devId){
 		if(devId == null){
 			throw new RuntimeException("设备命令中的设备Id值不允许为空");

@@ -2,9 +2,13 @@ package com.youzhuaniot.common;
 
 import com.youzhuaniot.common.utils.JsonUtil;
 import com.youzhuaniot.constatnt.YzLoginType;
+import com.youzhuaniot.entity.YzSmartDevice;
 import com.youzhuaniot.entity.YzSmartHomeInfo;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -14,13 +18,14 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-	@Test
-	public void addition_isCorrect() {
-		YzSmartHomeInfo info = new YzSmartHomeInfo();
-		info.setLoginType(YzLoginType.ACCOUNT);
-		String json = JsonUtil.toJson(info);
-		System.out.println(json);
-		YzSmartHomeInfo convert = JsonUtil.fromJson(json,YzSmartHomeInfo.class);
-		System.out.println(convert.toString());
+	public static void main(String[] args) {
+
+	}
+
+	class Vendor{
+		String vendorId;
+		String vendorName;
+		String vendorUrl;
+		String vendorPic;
 	}
 }

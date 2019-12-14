@@ -22,21 +22,23 @@ android {
     }
 
 }
+def maven = rootProject.ext.maven
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation 'junit:junit:4.12'
-    implementation 'com.youzhuan.iot:common:1.0.0'
+    implementation "com.youzhuan.iot:common:$maven.version"
 }
 
 //配置maven 本地库
-def maven = rootProject.ext.maven
 apply plugin: "maven"
 uploadArchives{
     repositories.mavenDeployer{
         // 本地仓库路径
-        repository(url:maven.rep)
+        repository(url:maven.rep){
+            authentication(userName: maven.username, password: maven.pwd)
+        }
         // 唯一标识
         pom.groupId = maven.groupId
         // 版本号

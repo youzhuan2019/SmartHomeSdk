@@ -1,9 +1,7 @@
 package com.youzhuaniot.entity;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
-public class YzSensorRecord implements Parcelable {
+public class YzSensorRecord  {
 
 	private String vender;
 	private String statusRecordId;
@@ -18,58 +16,6 @@ public class YzSensorRecord implements Parcelable {
 	private String updateTime;
 	private int delFlag;
 	private String text;
-
-	protected YzSensorRecord(Parcel in) {
-		vender = in.readString();
-		statusRecordId = in.readString();
-		uid = in.readString();
-		deviceId = in.readString();
-		sequence = in.readInt();
-		value1 = in.readInt();
-		value2 = in.readInt();
-		value3 = in.readInt();
-		value4 = in.readInt();
-		createTime = in.readString();
-		updateTime = in.readString();
-		delFlag = in.readInt();
-		text = in.readString();
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(vender);
-		dest.writeString(statusRecordId);
-		dest.writeString(uid);
-		dest.writeString(deviceId);
-		dest.writeInt(sequence);
-		dest.writeInt(value1);
-		dest.writeInt(value2);
-		dest.writeInt(value3);
-		dest.writeInt(value4);
-		dest.writeString(createTime);
-		dest.writeString(updateTime);
-		dest.writeInt(delFlag);
-		dest.writeString(text);
-	}
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	public static final Creator<YzSensorRecord> CREATOR = new Creator<YzSensorRecord>() {
-		@Override
-		public YzSensorRecord createFromParcel(Parcel in) {
-			return new YzSensorRecord(in);
-		}
-
-		@Override
-		public YzSensorRecord[] newArray(int size) {
-			return new YzSensorRecord[size];
-		}
-	};
-
-	public YzSensorRecord(){}
 
 
 	public String getVender() {

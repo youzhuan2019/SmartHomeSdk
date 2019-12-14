@@ -2,7 +2,7 @@ package com.youzhuaniot.devices.abs;
 
 
 import com.youzhuaniot.callback.IResultCallBack;
-import com.youzhuaniot.entity.YzCtrlCmd;
+import com.youzhuaniot.cmd.YzCtrlCmd;
 import com.youzhuaniot.entity.YzSmartDevice;
 
 /**
