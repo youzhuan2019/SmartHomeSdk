@@ -11,5 +11,5 @@ ext {
                username : "admin",
                pwd:"ljx19960723",
                groupId : "com.youzhuan.iot",
-               version : "1.0.0-SNAPSHOT"]
+               version : "1.0.1-SNAPSHOT"]
 }
