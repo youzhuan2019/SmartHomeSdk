@@ -22,6 +22,9 @@ allprojects {
         maven {
             url 'http://122.51.87.210:8081/nexus/content/repositories/snapshots/'
         }
+        maven {
+            url 'http://122.51.87.210:8081/nexus/content/repositories/releases/'
+        }
 //        maven { url 'D://apache/youzhuanRep' }
     }
 }

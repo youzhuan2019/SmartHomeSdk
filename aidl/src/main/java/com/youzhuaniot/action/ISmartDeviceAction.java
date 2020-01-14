@@ -1,8 +1,5 @@
 package com.youzhuaniot.action;
 
-import com.youzhuaniot.cmd.SensorCmd;
-import com.youzhuaniot.cmd.VoiceCtrlCmd;
-import com.youzhuaniot.cmd.YzCtrlCmd;
 
 /**
  * 智能家居设备 操作实现

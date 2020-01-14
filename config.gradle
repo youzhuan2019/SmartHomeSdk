@@ -7,9 +7,13 @@ ext {
 
     maven = [
 //               rep :"file://D://apache/youzhuanRep/",
-               rep : "http://122.51.87.210:8081/nexus/content/repositories/snapshots/",
+               repRelease : "http://122.51.87.210:8081/nexus/content/repositories/releases/",
+               repSnapshots : "http://122.51.87.210:8081/nexus/content/repositories/snapshots/",
                username : "admin",
                pwd:"ljx19960723",
                groupId : "com.youzhuan.iot",
-               version : "1.0.1-SNAPSHOT"]
+               versionSnapshots : "1.0.1-SNAPSHOT",
+               versionRelease: "1.0.0"
+    ]
+    repVersion = maven.versionRelease
 }

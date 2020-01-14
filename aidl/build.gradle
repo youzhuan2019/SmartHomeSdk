@@ -28,21 +28,25 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation 'junit:junit:4.12'
-    implementation "com.youzhuan.iot:common:$maven.version"
+    implementation "com.youzhuan.iot:common:$rootProject.ext.repVersion"
 }
 
 //配置maven 本地库
 apply plugin: "maven"
 uploadArchives{
     repositories.mavenDeployer{
-        // 本地仓库路径
-        repository(url:maven.rep){
+        //发布版本仓库
+        repository(url:maven.repRelease){
+            authentication(userName: maven.username, password: maven.pwd)
+        }
+        //快照版本仓库
+        snapshotRepository(url:maven.repSnapshots){
             authentication(userName: maven.username, password: maven.pwd)
         }
         // 唯一标识
         pom.groupId = maven.groupId
-        // 版本号
-        pom.version = maven.version
+        // 版本号 在config中控制发布版和快照版
+        pom.version = rootProject.ext.repVersion
         // 项目名称
         pom.artifactId = "aidl"
     }
