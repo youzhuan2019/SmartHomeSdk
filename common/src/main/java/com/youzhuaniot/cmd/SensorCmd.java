@@ -1,5 +1,5 @@
 package com.youzhuaniot.cmd;
-
+@Deprecated
 public class SensorCmd {
 
 	private String devId;

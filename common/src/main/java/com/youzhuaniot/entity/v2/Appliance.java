@@ -1,12 +1,18 @@
 package com.youzhuaniot.entity.v2;
 
-import java.util.HashMap;
-import java.util.Map;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
 
 /**
- *
+ *  智能家居协议实体
  */
-public class Appliance {
+public class Appliance implements Parcelable {
 	//设备标识符。标识符在用户拥有的所有设备上必须是唯一的。此外，
 	// 标识符需要在同一设备的多个发现请求之间保持一致
 	private String applianceId;
@@ -31,18 +37,51 @@ public class Appliance {
 	//放置区域
 	private String zone;
 	//放置楼层
-	private String floor = "一";
+	private String floor;
 	//软件版本
 	private String version;
 	//设备当前是否能够到达。true表示设备当前可以到达，false表示当前设备不能到达。
 	private boolean isReachable;
 	//设备的属性信息。当设备没有属性信息时，协议中不需要传入该字段。
 	// 每个设备允许同步的最大的属性数量是10。详细信息请参考设备属性及设备属性上报。
-	private Attribute[] attributes;
+	private List<Attribute> attributes;
 	//提供给设备云使用，存放设备或场景相关的附加信息，是键值对
-	private Map<String,Object> additionalApplianceDetails;
+	private JSONObject additionalApplianceDetails;
 	private String vendorId;
-	private HashMap<String,Attribute> attributeHashMap;
+
+	public Appliance(){}
+
+	protected Appliance(Parcel in) {
+		applianceId = in.readString();
+		actions = in.createStringArray();
+		applianceTypes = in.createStringArray();
+		deviceName = in.readString();
+		friendlyName = in.readString();
+		friendlyDescription = in.readString();
+		manufacturerName = in.readString();
+		icon = in.readString();
+		model = in.readString();
+		modelName = in.readString();
+		zone = in.readString();
+		floor = in.readString();
+		version = in.readString();
+		isReachable = in.readByte() != 0;
+		vendorId = in.readString();
+		attributes =  JSON.parseArray(in.readString(),Attribute.class);
+		additionalApplianceDetails = JSON.parseObject(in.readString());
+	}
+
+	public static final Creator<Appliance> CREATOR = new Creator<Appliance>() {
+		@Override
+		public Appliance createFromParcel(Parcel in) {
+			return new Appliance(in);
+		}
+
+		@Override
+		public Appliance[] newArray(int size) {
+			return new Appliance[size];
+		}
+	};
 
 	public String getApplianceId() {
 		return applianceId;
@@ -56,7 +95,7 @@ public class Appliance {
 		return actions;
 	}
 
-	public void setActions(String[] actions) {
+	public void setActions(String... actions) {
 		this.actions = actions;
 	}
 
@@ -64,7 +103,7 @@ public class Appliance {
 		return applianceTypes;
 	}
 
-	public void setApplianceTypes(String[] applianceTypes) {
+	public void setApplianceTypes(String... applianceTypes) {
 		this.applianceTypes = applianceTypes;
 	}
 
@@ -158,27 +197,7 @@ public class Appliance {
 		isReachable = reachable;
 	}
 
-	public Attribute[] getAttributes() {
-		return attributes;
-	}
 
-	public void setAttributes(Attribute[] attributes) {
-		this.attributes = attributes;
-		if(attributeHashMap== null){
-			attributeHashMap = new HashMap<>();
-		}
-		for(Attribute attribute:this.attributes){
-			attributeHashMap.put(attribute.getName(),attribute);
-		}
-	}
-
-	public Map<String, Object> getAdditionalApplianceDetails() {
-		return additionalApplianceDetails;
-	}
-
-	public void setAdditionalApplianceDetails(Map<String, Object> additionalApplianceDetails) {
-		this.additionalApplianceDetails = additionalApplianceDetails;
-	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -190,12 +209,20 @@ public class Appliance {
 		}
 	}
 
-	public Attribute getAttribute(String key) {
-		if(attributeHashMap!=null){
-			return attributeHashMap.get(key);
-		}else{
-			return null;
-		}
+	public List<Attribute> getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(List<Attribute> attributes) {
+		this.attributes = attributes;
+	}
+
+	public JSONObject getAdditionalApplianceDetails() {
+		return additionalApplianceDetails;
+	}
+
+	public void setAdditionalApplianceDetails(JSONObject additionalApplianceDetails) {
+		this.additionalApplianceDetails = additionalApplianceDetails;
 	}
 
 	public String getVendorId() {
@@ -205,4 +232,31 @@ public class Appliance {
 	public void setVendorId(String vendorId) {
 		this.vendorId = vendorId;
 	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(applianceId);
+		dest.writeStringArray(actions);
+		dest.writeStringArray(applianceTypes);
+		dest.writeString(deviceName);
+		dest.writeString(friendlyName);
+		dest.writeString(friendlyDescription);
+		dest.writeString(manufacturerName);
+		dest.writeString(icon);
+		dest.writeString(model);
+		dest.writeString(modelName);
+		dest.writeString(zone);
+		dest.writeString(floor);
+		dest.writeString(version);
+		dest.writeByte((byte) (isReachable ? 1 : 0));
+		dest.writeString(vendorId);
+		dest.writeString(JSON.toJSONString(attributes));
+		dest.writeString(JSON.toJSONString(additionalApplianceDetails));
+	}
+
 }

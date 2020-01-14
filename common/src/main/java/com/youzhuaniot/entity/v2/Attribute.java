@@ -1,5 +1,14 @@
 package com.youzhuaniot.entity.v2;
 
+
+import android.util.Log;
+
+import com.annimon.stream.Objects;
+import com.annimon.stream.Stream;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 设备的属性信息
  */
@@ -55,5 +64,18 @@ public class Attribute {
 
 	public void setUncertaintyInMilliseconds(long uncertaintyInMilliseconds) {
 		this.uncertaintyInMilliseconds = uncertaintyInMilliseconds;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Attribute attribute = (Attribute) o;
+		return Objects.equals(name, attribute.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(name);
 	}
 }

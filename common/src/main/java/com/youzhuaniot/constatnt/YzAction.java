@@ -4,12 +4,16 @@ package com.youzhuaniot.constatnt;
  * 动作指令集合
  */
 public interface YzAction {
+	//连接服务
+	int CONNECT = 0;
 	//初始化
 	int ACTION_INIT = 10;
 	//登录
 	int ACTION_LOGIN = 11;
 	//获取登录状态
 	int ACTION_GET_LOGIN_STATE = 12;
+	//获取SmartInfo
+	int ACTION_GET_SMART_INFO = 13;
 	//家庭选择
 	int ACTION_FAMILY_SELECT = 103;
 	//查询和绑定设备

@@ -5,6 +5,7 @@ package com.youzhuaniot.cmd;
 /**
  * 语音参数命令类
  */
+@Deprecated
 public class VoiceCtrlCmd extends YzCtrlCmd {
 
 	//设备类型

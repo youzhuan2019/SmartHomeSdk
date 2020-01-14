@@ -1,17 +1,5 @@
 package com.youzhuaniot.common;
 
-import com.youzhuaniot.common.utils.JsonUtil;
-import com.youzhuaniot.constatnt.YzLoginType;
-import com.youzhuaniot.entity.YzSmartDevice;
-import com.youzhuaniot.entity.YzSmartHomeInfo;
-
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *

@@ -11,6 +11,7 @@ import java.util.Map;
 /**
  * 控制指令实体
  */
+@Deprecated
 public class YzCtrlCmd implements Serializable {
 
 	//设备指令
