@@ -5,7 +5,7 @@ package com.youzhuaniot.constatnt;
  * Create By 2020-04-21
  * 智能家居支持的操作类型
  */
-public class YzSupportAction {
+public interface YzSupportAction {
     String turnOn = "turnOn"; //打开
     String timingTurnOn = "timingTurnOn"; //定时打开
     String turnOff = "turnOff"; //关闭

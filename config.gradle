@@ -15,5 +15,5 @@ ext {
                versionSnapshots : "1.0.1-SNAPSHOT",
                versionRelease: "1.0.0"
     ]
-    repVersion = maven.versionRelease
+    repVersion = maven.versionSnapshots
 }
