@@ -1,13 +1,7 @@
 package com.youzhuaniot.entity.v2;
 
 
-import android.util.Log;
-
 import com.annimon.stream.Objects;
-import com.annimon.stream.Stream;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 设备的属性信息
