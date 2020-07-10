@@ -1,2 +1,5 @@
-include   ':common',':aidl'
+//include ':demo'
+include ':demoservcie'
+include ':iot'
+//include   ':common',':aidl'
  

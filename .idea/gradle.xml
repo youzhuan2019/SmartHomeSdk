@@ -11,8 +11,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/aidl" />
-            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/demoservcie" />
+            <option value="$PROJECT_DIR$/iot" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

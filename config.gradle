@@ -6,7 +6,7 @@ ext {
                versionName      : "1.0"]
 
     maven = [
-//               rep :"file://D://apache/youzhuanRep/",
+               rep :"file://D://apache/youzhuanRep/",
                repRelease : "http://122.51.87.210:8081/nexus/content/repositories/releases/",
                repSnapshots : "http://122.51.87.210:8081/nexus/content/repositories/snapshots/",
                username : "admin",
