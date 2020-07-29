@@ -5,6 +5,9 @@ import androidx.annotation.NonNull;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONCreator;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONType;
 import com.youzhuan.iot.constant.YzDevAction;
 import com.youzhuan.iot.constant.YzDevType;
 
@@ -58,7 +61,7 @@ public class Appliance implements Cloneable {
         return applianceId;
     }
     /**设置设备唯一ID  int*/
-    public void setApplianceId(int applianceId) {
+    public void setApplianceIdByInt(int applianceId) {
         this.applianceId = String.valueOf(applianceId);
     }
     /**设置设备唯一ID  string*/
