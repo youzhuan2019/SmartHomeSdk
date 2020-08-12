@@ -47,27 +47,26 @@ public abstract class YzIotService extends Service {
 
             @Override
             public void executor(int action, String param) throws RemoteException {
-                switch (action){
+                switch (action) {
                     case SdkAction.SDK_INIT_IOT_SERVER:
                         init(getApplicationContext());
-
                         break;
-                        case SdkAction.SDK_GET_DEVICES:
-                            KLog.e("发现设备:"+param);
-                            discoverAppliance(param);
-                            break;
+                    case SdkAction.SDK_GET_DEVICES:
+                        KLog.e("发现设备:" + param);
+                        discoverAppliance(param);
+                        break;
                     case SdkAction.SDK_CONTROL:
-                        KLog.e("控制设备:"+param);
-                        applianceControl(JSON.parseObject(param,ControlRequest.class));
+                        KLog.e("控制设备:" + param);
+                        applianceControl(param);
                         break;
                     case SdkAction.SDK_GET_IOT_CONFIG:
                         SdkInfoConfig config = new SdkInfoConfig();
                         config = getSdkConfig();
-                        notifyHost(SdkAction.SDK_GET_IOT_CONFIG,JSON.toJSONString(config));
+                        notifyHost(SdkAction.SDK_GET_IOT_CONFIG, JSON.toJSONString(config));
                         break;
                     case SdkAction.SDK_LOGIN:
                         JSONObject jsonObj = JSON.parseObject(param);
-                        login(jsonObj.getString("username"),jsonObj.getString("password"));
+                        login(jsonObj.getString("username"), jsonObj.getString("password"));
                         break;
                     case SdkAction.SDK_LOGOUT:
                         logout();
@@ -93,9 +92,9 @@ public abstract class YzIotService extends Service {
     public abstract void discoverAppliance(String param);
     /**
      * 设备控制
-     * @param controlRequest 请求的参数实体
+     * @param requestJson 请求的参数实体
      */
-    public abstract void applianceControl(ControlRequest controlRequest);
+    public abstract void applianceControl(String requestJson);
 
     /**
      * 初始化服务
