@@ -72,9 +72,11 @@ public abstract class YzIotService extends Service {
                     case SdkAction.SDK_LOGOUT:
                         logout();
                         break;
+                    default:
+                        otherCommand(action, param);
+                        break;
                 }
             }
-
         };
     }
 
@@ -119,6 +121,10 @@ public abstract class YzIotService extends Service {
      * 登出
      */
     public void logout(){
+
+    }
+
+    public void otherCommand(int action,String param){
 
     }
 

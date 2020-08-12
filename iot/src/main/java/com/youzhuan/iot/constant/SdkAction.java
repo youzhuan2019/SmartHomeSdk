@@ -46,7 +46,7 @@ public interface SdkAction {
     /**
      * 控制设备失败
      */
-    int CONTROLLER_FAIL = 3001;
+    int CONTROLLER_FAIL = 3002;
     /**
      * 主动通知设备改变
      */
