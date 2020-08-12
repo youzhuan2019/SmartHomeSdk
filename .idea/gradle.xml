@@ -11,7 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/demoservcie" />
+            <option value="$PROJECT_DIR$/fjj" />
             <option value="$PROJECT_DIR$/iot" />
           </set>
         </option>
